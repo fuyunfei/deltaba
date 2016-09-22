@@ -1,0 +1,11 @@
+In this package there are the pre-compiled libraries of OpenSceneGraph 2.8.1 and Mesa 7.0.3 to be used with the renderer utility:
+OpenSceneGraph, a high performance 3D graphics toolkit
+http://www.openscenegraph.org/
+
+The Mesa 3D Graphics Library. An open-source implementation of the OpenGL specification.
+http://www.mesa3d.org
+
+Mesa is only needed if the default OpenGL implementation in the system doesn't support the 
+pbuffer (off-screen) extension. The provided pre-compiled version of Mesa supports the off-screen extension.
+
+Any use of these libraries must respect their respective licenses. Please refer to the corresponding websites in order to learn more about them or if the full source code is required.
