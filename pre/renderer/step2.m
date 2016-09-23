@@ -1,5 +1,5 @@
-im1=imread('1.jpg');
-im2=imread('2.jpg');
+im1=imread('2.jpg');
+im2=imread('1.jpg');
 
 im1=imresize(imfilter(im1,fspecial('gaussian',7,1.),'same','replicate'),1,'bicubic');
 im2=imresize(imfilter(im2,fspecial('gaussian',7,1.),'same','replicate'),1,'bicubic');

@@ -11,7 +11,9 @@
 #include <pcl/kdtree/kdtree_flann.h>
 #include <pcl/point_types.h>
 #include <algorithm>
- 
+#include <Eigen/Dense>
+#include <Eigen/Core>
+#include <Eigen/SVD>
 
 #include "ceres/ceres.h"
 #include "ceres/rotation.h"
@@ -22,4 +24,5 @@ using ceres::CauchyLoss;
 using namespace std;
 
 void writeplywj( char* outfile_name,BALProblem& bal_problem,float focal);
-void kdtree();
+void kdtree( );
+

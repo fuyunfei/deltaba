@@ -1,3 +1,9 @@
+%% last step ,generate Myfile.txt pos2d pos3d  vx vy  
+%  vx vy represents  (pos_queryI)+(vx vy)= pos_model
+
+load('PreCeres.mat'); % 注意其中unproject.obj 已经修改 没脖子 没耳朵
+ 
+
 %% 组织架构 :  vertex 2d positon,vertex 3d position,vx,vy  
 [vertex,face]=read_obj_file('unproject.obj');
 unproj_rt=[[est_R est_T'] * [vertex ones(size(vertex,1),1)]']';
