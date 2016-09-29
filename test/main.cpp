@@ -34,7 +34,13 @@ struct pointinf
 	int vxvy[2];
 	};
 
-
+// input ring of vertex_indexi, output theta
+std::vector<double> theta_i(std::vector<pointinf>* refmodel_p,std::vector<int> ringi){
+    std::vector<int> ringi;
+for(auto i : ringi){
+      *refmodel_p[i].v[3];
+}
+}
 
 std::vector< std::vector<int> > kdtree (vector<pointinf> refmodel){
 
@@ -92,9 +98,8 @@ Eigen::MatrixXf invA(std::vector<pointinf> refmodel,std::vector<int> ring,int id
         A.block(i+2*neighbor_num,0,1,7)<<z,y,-x,0,0,0,1;
     };
    // std::cout<<pseudoInverse(A)<<std::endl;
-    std::cout<<pseudoInverse(A)*A<<std::endl;
-};
-
+    return pseudoInverse(A);
+}
 
 int main () {
   ifstream myfile;
@@ -110,11 +115,14 @@ int main () {
      refmodel.push_back(onerow);
  }
 
-std::vector< std::vector<int> > onering;
-onering=kdtree(refmodel);
+std::vector< std::vector<int> > rings;
+rings=kdtree(refmodel);
 Eigen::MatrixXd cor;
 cor=corres(refmodel,960,540);
 int id=0;
 invA(refmodel,onering[id],id);
+
+vector<double> v=thetai(&refmodel,rings[3]);
+
 return 0; 
 }

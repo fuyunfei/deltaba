@@ -14,7 +14,7 @@ add_definitions(${PCL_DEFINITIONS})
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
 
  
-add_executable(deltaba deltaba.cpp writeplywj.cpp BALProblem.cpp kdtree.cpp)
+add_executable(deltaba deltaba.cpp functions.cpp BALProblem.cpp)
 target_link_libraries(deltaba ${CERES_LIBRARIES} ${PCL_LIBRARIES})
  
 

@@ -106,6 +106,25 @@ std::vector< std::vector<int> > kdtree (BALProblem bal_problem){
 
 int main(int argc, char** argv) {
 
+
+    ifstream prefile;
+    prefile.open ("../../pre/MyFile.txt");
+    std::vector<pointinf> refmodel;
+    for(string line;  getline(prefile, line); )
+    {
+        pointinf onerow;
+        istringstream in(line);
+        in>>onerow.twoD[0]>> onerow.twoD[1]
+                >> onerow.v[0]>> onerow.v[1]>> onerow.v[2]
+                >>onerow.vxvy[0]>>onerow.vxvy[1];
+        refmodel.push_back(onerow);
+    }
+    //neighbors of veteces
+    std::vector< std::vector<int> > rings= kdtree (refmodel);
+    // all theta of the reference model
+    std::vector<Eigen::Vector3d> alltheta= all_thetas(&refmodel,&rings);
+
+
     double *onlyfocal = new double [1];
     std::cout<<"initial onlyfocal"<<endl;  cin>>onlyfocal[0];
     fixedfocus=onlyfocal[0];
